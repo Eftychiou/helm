@@ -12,7 +12,7 @@ backend:
 
 ui:
   replicas: 1
-  image: nginx
+  image: eftichiou/george-ui
   tag: latest
   service:
     port: 80
