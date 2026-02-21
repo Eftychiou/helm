@@ -16,7 +16,7 @@ spec:
       containers:
         - name: backend
           image: "{{ .Values.backend.image }}:{{ .Values.backend.tag }}"
-          args: {{- toYaml .Values.backend.args | nindent 8 }}
           ports:
             - containerPort: {{ .Values.backend.service.targetPort }}
-          env: []
+          args: {{- toYaml .Values.backend.args | nindent 12 }}
+          env: {{- toYaml .Values.backend.env | nindent 12 }}
