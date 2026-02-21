@@ -18,3 +18,6 @@ spec:
           image: "{{ .Values.backend.image }}:{{ .Values.backend.tag }}"
           ports:
             - containerPort: {{ .Values.backend.service.port }}
+          env:
+            - name: PORT
+              value: "{{ .Values.backend.service.port }}"
