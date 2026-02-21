@@ -2,8 +2,10 @@ namespace: george-app
 
 backend:
   replicas: 1
-  image: kennethreitz/httpbin
+  image: hashicorp/http-echo
   tag: latest
+  args:
+    - "-text=Hello from backend API"
   service:
     port: 80
 
