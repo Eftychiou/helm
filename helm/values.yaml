@@ -1,0 +1,19 @@
+namespace: george-app
+
+backend:
+  replicas: 1
+  image: kennethreitz/httpbin
+  tag: latest
+  service:
+    port: 80
+
+ui:
+  replicas: 1
+  image: nginx
+  tag: latest
+  service:
+    port: 80
+
+istio:
+  host: george.com
+  gatewaySelector: ingressgateway
