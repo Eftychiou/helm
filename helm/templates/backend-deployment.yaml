@@ -17,7 +17,5 @@ spec:
         - name: backend
           image: "{{ .Values.backend.image }}:{{ .Values.backend.tag }}"
           ports:
-            - containerPort: {{ .Values.backend.service.port }}
-          env:
-            - name: PORT
-              value: "{{ .Values.backend.service.port }}"
+            - containerPort: {{ .Values.backend.service.targetPort }}
+          env: []
